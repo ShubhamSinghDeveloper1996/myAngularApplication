@@ -1,0 +1,186 @@
+.coronaVirus-wrapper {
+  width: 100%;
+  /* overflow: auto; */
+  /* border: 1px solid black; */
+  /* height: 100vh; */
+}
+.coronaVirus-wrapper .heading {
+    font-size: 3rem;
+    text-align: center;
+    color: crimson;
+    text-shadow: 2px 2px 1px darkblue;
+}
+.coronaVirus-wrapper .currentDate{
+    margin-top: 25px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: red;
+}
+.globalData{
+  border: 2px solid black;
+  margin-top: 25px;
+}
+.countryWiseData{
+  border: 2px solid red;
+  margin-top: 20px;
+}
+.globalData h1{
+  font-size: 2.5rem;
+  text-align: center;
+  color: green;
+}
+.countryWiseData h1{
+  font-size: 2.5rem;
+  text-align: center;
+  color: brown;
+}
+.noDataFound{
+  width: 100%;
+}
+.noDataFound .heading{
+  font-size: 3rem;
+  text-align: center;
+  color: brown;
+}
+
+.noDataFound .try-again{
+  padding: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+  border-radius: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.noDataFound .error{
+  margin-top: 100px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: red;
+  max-width: inherit;
+  overflow: auto;
+}
+.coronaVirus-wrapper .waitingForResponse{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 4rem;
+  color: coral;
+}
+
+
+/* .coronaVirus-wrapper table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+
+.coronaVirus-wrapper th,
+td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.coronaVirus-wrapper tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.coronaVirus-wrapper th {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.coronaVirus-wrapper tr:hover {
+  background-color: #f5f5f5;
+} */
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------ Responsive Table CSS Code Start------------------------------------------------------------------------- */
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* ------------------------------------------------------------ Responsive Table CSS Code ends ------------------------------------------------------------------------- */

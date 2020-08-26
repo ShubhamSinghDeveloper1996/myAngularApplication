@@ -1,0 +1,77 @@
+<div class="coronaVirus-wrapper">
+  <h1 class="heading">Corona Virus Daily Tracker</h1>
+  
+  <section class="waitingForResponse" *ngIf="waitingForResponse">
+    <h1>Please Wait..</h1>
+  </section>
+  <section *ngIf="isResponseReceived">
+    <!-- <h1 class="heading">Corona Virus Daily Tracker</h1> -->
+    <h2 class="currentDate">Latest Corona Virus (Covid-19) records of {{currentDate}}</h2>
+    <section class="globalData" *ngIf="coronaGlobalData">
+      <div>
+        <h1>Global Records</h1>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">New Confirmed Cases</th>
+                <th scope="col">Total Confirmed Cases</th>
+                <th scope="col">New Recovered Cases</th>
+                <th scope="col">Total Recovered Cases</th>
+                <th scope="col">New Deaths</th>
+                <th scope="col">Total Deaths</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="New Confirmed Cases">{{coronaGlobalData.NewConfirmed}}</td>
+                <td data-label="Total Confirmed Cases">{{coronaGlobalData.TotalConfirmed}}</td>
+                <td data-label="New Recovered Cases">{{coronaGlobalData.NewRecovered}}</td>
+                <td data-label="Total Recovered Cases">{{coronaGlobalData.TotalRecovered}}</td>
+                <td data-label="New Deaths">{{coronaGlobalData.NewDeaths}}</td>
+                <td data-label="Total Deaths">{{coronaGlobalData.TotalDeaths}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="countryWiseData" *ngIf="coronaCountriesData">
+      <div>
+        <h1>Country Wise Records</h1>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">S. No.</th>
+              <th scope="col">Country Name</th>
+              <th scope="col">New Confirmed Cases</th>
+              <th scope="col">Total Confirmed Cases</th>
+              <th scope="col">New Recovered Cases</th>
+              <th scope="col">Total Recovered Cases</th>
+              <th scope="col">New Deaths</th>
+              <th scope="col">Total Deaths</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let covid19 of coronaCountriesData; index as i">
+              <td data-label="S. No.">{{i + 1}}</td>
+              <td data-label="Country Name">{{covid19.Country}}</td>
+              <td data-label="New Confirmed Cases">{{covid19.NewConfirmed}}</td>
+              <td data-label="Total Confirmed Cases">{{covid19.TotalConfirmed}}</td>
+              <td data-label="New Recovered Cases">{{covid19.NewRecovered}}</td>
+              <td data-label="Total Recovered Cases">{{covid19.TotalRecovered}}</td>
+              <td data-label="New Deaths">{{covid19.NewDeaths}}</td>
+              <td data-label="Total Deaths">{{covid19.TotalDeaths}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+  <section *ngIf="!isResponseReceived" class="noDataFound">
+    <!-- <h1 class="heading">Corona Virus Daily Tracker</h1> -->
+    <h1 class="error">{{apiError}}</h1>
+    <button *ngIf="showButton" class="try-again" (click)="fetchCoronaVirusData();">Try Again to Fetch Data</button>
+  </section>
+</div>
